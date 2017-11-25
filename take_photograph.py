@@ -1,37 +1,35 @@
 #!/usr/bin/env python
 import cv2, sys
-print(0)
 
 # Define constants
-DEVICE_NUMBER = 0
-print(1)
+DEVICE_NUMBER = 2
+print("Setting configuration values")
 
 # Initialize webcam
 vc = cv2.VideoCapture(DEVICE_NUMBER)
-print(2)
+print("Creating image capture context")
 
 # Check if the webcam works
 if vc.isOpened():
-	print(3)
 
 	# Try to get the first frame
 	retval, frame = vc.read()
-	print(4)
+	print("Reading in image")
 else:
 
 	# Exit the program
-	print("Exiting")
+	print("Exiting due to competing context")
 	sys.exit(1)
 # Read in the next frame
 
 retval, frame = vc.read()
-print(6)
+print("Reading additional frame")
 
 # Show the frame to the user
-cv2.imshow("DragonBoard 410c Workshop", frame)
-print(7)
+cv2.imshow("Therapist Visual Feedback", frame)
+print("Displaying image")
 
 # Exit program after waiting indefinitely for a pressed key
 cv2.waitKey(0)
+print("Exiting")
 sys.exit(0)
-print(8)

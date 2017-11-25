@@ -33,4 +33,5 @@ print(7)
 
 # Exit program after waiting indefinitely for a pressed key
 cv2.waitKey(0)
+sys.exit(0)
 print(8)

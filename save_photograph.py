@@ -49,6 +49,8 @@ else:
 def Capture_Image():
 	print("Reading in image")
 	retval, frame = vc.read()
+	retval, frame = vc.read()
+	retval, frame = vc.read()
 
 	print("Writing image file")
 	# Save the frame as an image file

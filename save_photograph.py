@@ -62,8 +62,3 @@ def Capture_Image():
 	# Show the frame to the user
 	print("Displaying image")
 	cv2.imshow("Therapist Visual Feedback", img)
-
-# Exit program after waiting indefinitely for a pressed key
-cv2.waitKey(0)
-print("Exiting")
-sys.exit(0)

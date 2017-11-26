@@ -2,7 +2,7 @@ from save_photograph import Capture_Image
 import time
 
 for i in range(100):
-	print(Capture_Image)
+	print(Capture_Image())
 	time.sleep(5)
 
 

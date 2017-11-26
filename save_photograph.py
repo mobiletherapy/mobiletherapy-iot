@@ -63,4 +63,4 @@ def Capture_Image():
 	print("Displaying image")
 	cv2.imshow("Therapist Visual Feedback", img)
 
-	return json.loads(results)
+	return results['link']

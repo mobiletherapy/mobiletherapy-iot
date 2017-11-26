@@ -1,5 +1,27 @@
 #!/usr/bin/env python
-import cv2, sys
+import cv2, sys, config
+from imgurpython import ImgurClient
+from datetime import datetime
+
+client = ImgurClient(config.client_id, config.client_secret, config.access_token, config.refresh_token)
+
+def upload_image(path):
+	"Upload a picture of a kitten. We don't ship one, so get creative!"
+
+	# Here's the metadata for the upload. All of these are optional, including
+	# this config dict itself.
+	config = {
+		'name':  'Face captured {0}'.format(datetime.now()),
+		'title': 'Face captured {0}'.format(datetime.now()),
+		'description': 'Face captured {0}'.format(datetime.now())
+	}
+
+	print("Uploading image...")
+	image = client.upload_from_path(path, config=config, anon=True)
+	print("Done")
+	print()
+
+	return image
 
 # Define constants
 print("Setting configuration values")
@@ -31,6 +53,9 @@ print("Writing image file")
 cv2.imwrite(IMAGE_FILE, frame)
 # Read the output file
 img = cv2.imread(IMAGE_FILE)
+
+print("Sending image")
+print(upload_image(IMAGE_FILE))
 
 # Show the frame to the user
 print("Displaying image")

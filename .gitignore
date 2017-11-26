@@ -16,7 +16,7 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
+# lib/ 										# Commented to allow for inclusion when sending to the IoT device
 lib64/
 parts/
 sdist/
@@ -84,9 +84,9 @@ celerybeat-schedule
 # Environments
 .env
 .venv
-env/
+# env/										# Commented to allow for inclusion when sending to the IoT device
 venv/
-ENV/
+# ENV/										# Commented to allow for inclusion when sending to the IoT device
 env.bak/
 venv.bak/
 
@@ -243,9 +243,9 @@ fabric.properties
 ### VirtualEnv template
 # Virtualenv
 # http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
-[Bb]in
+# [Bb]in										# Commented to allow for inclusion when sending to the IoT device
 [Ii]nclude
-[Ll]ib
+# [Ll]ib										# Commented to allow for inclusion when sending to the IoT device
 [Ll]ib64
 [Ll]ocal
 [Ss]cripts

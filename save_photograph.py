@@ -57,8 +57,10 @@ def Capture_Image():
 	img = cv2.imread(IMAGE_FILE)
 
 	print("Sending image")
-	print(upload_image(IMAGE_FILE))
+	results = upload_image(IMAGE_FILE)
 
 	# Show the frame to the user
 	print("Displaying image")
 	cv2.imshow("Therapist Visual Feedback", img)
+
+	return results

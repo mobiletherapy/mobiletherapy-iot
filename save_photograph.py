@@ -36,7 +36,7 @@ vc = cv2.VideoCapture(DEVICE_NUMBER)
 if vc.isOpened():
 
 	# Try to get the first frame
-	print("Reading in image")
+	print("Reading in image for test")
 	retval, frame = vc.read()
 else:
 
@@ -45,21 +45,23 @@ else:
 	sys.exit(1)
 # Read in the next frame
 
-print("Reading additional frame")
-retval, frame = vc.read()
 
-print("Writing image file")
-# Save the frame as an image file
-cv2.imwrite(IMAGE_FILE, frame)
-# Read the output file
-img = cv2.imread(IMAGE_FILE)
+def Capture_Image():
+	print("Reading in image")
+	retval, frame = vc.read()
 
-print("Sending image")
-print(upload_image(IMAGE_FILE))
+	print("Writing image file")
+	# Save the frame as an image file
+	cv2.imwrite(IMAGE_FILE, frame)
+	# Read the output file
+	img = cv2.imread(IMAGE_FILE)
 
-# Show the frame to the user
-print("Displaying image")
-cv2.imshow("Therapist Visual Feedback", img)
+	print("Sending image")
+	print(upload_image(IMAGE_FILE))
+
+	# Show the frame to the user
+	print("Displaying image")
+	cv2.imshow("Therapist Visual Feedback", img)
 
 # Exit program after waiting indefinitely for a pressed key
 cv2.waitKey(0)

@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import cv2, sys, config, json
+import cv2, sys, config, json, binascii, os
 from imgurpython import ImgurClient
 from datetime import datetime
 
@@ -47,19 +47,24 @@ else:
 
 
 def Capture_Image():
+	img_name = "a" + binascii.b2a_hex(os.urandom(15)) + IMAGE_FILE
 	print("Reading in image")
+	retval, frame = vc.read()
+	retval, frame = vc.read()
+	retval, frame = vc.read()
+	retval, frame = vc.read()
 	retval, frame = vc.read()
 	retval, frame = vc.read()
 	retval, frame = vc.read()
 
 	print("Writing image file")
 	# Save the frame as an image file
-	cv2.imwrite(IMAGE_FILE, frame)
+	cv2.imwrite(img_name, frame)
 	# Read the output file
-	img = cv2.imread(IMAGE_FILE)
+	img = cv2.imread(img_name)
 
 	print("Sending image")
-	results = upload_image(IMAGE_FILE)
+	results = upload_image(img_name)
 
 	# Show the frame to the user
 	print("Displaying image")

@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import cv2, sys, config
+import cv2, sys, config, json
 from imgurpython import ImgurClient
 from datetime import datetime
 
@@ -63,4 +63,4 @@ def Capture_Image():
 	print("Displaying image")
 	cv2.imshow("Therapist Visual Feedback", img)
 
-	return results
+	return json.loads(results)

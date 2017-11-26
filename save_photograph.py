@@ -63,4 +63,5 @@ def Capture_Image():
 	print("Displaying image")
 	cv2.imshow("Therapist Visual Feedback", img)
 
+	print("Saved image at " + results['link'])
 	return results['link']

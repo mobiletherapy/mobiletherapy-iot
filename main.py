@@ -50,6 +50,8 @@ class MySubscribeCallback(SubscribeCallback):
 		# print(message)
 		# print(message.message)
 		link = Capture_Image()
+		print(link)
+		print(type(link))
 		pubnub.publish().channel('http').message(link).async(my_publish_callback)
 		pass  # Handle new message stored in message.message
 
